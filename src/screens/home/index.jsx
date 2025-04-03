@@ -2,7 +2,7 @@ import ShoppingList from './ShoppingList';
 import Subscribe from './Subscribe';
 import MainCarousel from './MainCarousel';
 
-function Home() {
+export default function Home() {
   return (
     <div className='home'>
       <MainCarousel />
@@ -11,5 +11,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;

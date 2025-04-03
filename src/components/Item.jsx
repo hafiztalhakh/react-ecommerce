@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { IconButton, Box, Typography, useTheme, Button } from '@mui/material';
@@ -20,6 +20,11 @@ const Item = ({ item, width }) => {
 
   const { category, price, name, image } = item;
 
+  const imagePath = useMemo(() => {
+    const baseUrl = import.meta.env.BASE_URL ?? '/';
+    return `${baseUrl}assets/images/${image}`
+  }, [image])
+
   return (
     <Box width={width}>
       <Box
@@ -31,7 +36,7 @@ const Item = ({ item, width }) => {
           alt={item.name}
           width='300px'
           height='400px'
-          src={`${import.meta.env.BASE_URL}/assets/images/${image}`}
+          src={imagePath}
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: 'pointer' }}
         />

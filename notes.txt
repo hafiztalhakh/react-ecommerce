@@ -9,3 +9,48 @@ By default, the new commit on the gh-pages branch will have a commit message of 
 
 $ npm run deploy -- -m "Deploy React app to GitHub Pages"
 At this point, the GitHub repository contains a branch named gh-pages, which contains the files that make up the distributable version of the React app. However, we haven't configured GitHub Pages to serve those files yet.
+
+/ecommerce-app  
+│── /public  
+│── /src  
+│   │── /assets  
+│   │   ├── images/  
+│   │   ├── fonts/  
+│   │   ├── styles/ (Global SCSS/CSS)  
+│   │── /atoms (Base UI components - buttons, inputs, etc.)  
+│   │   ├── Button.jsx  
+│   │   ├── Input.jsx  
+│   │   ├── Checkbox.jsx  
+│   │   ├── RadioButton.jsx  
+│   │   ├── Select.jsx  
+│   │   ├── Textarea.jsx  
+│   │   ├── index.js (Exports all components for easy imports)  
+│   │── /components  
+│   │   ├── /common (Reusable UI components like Modals, Loaders, Alerts)  
+│   │   ├── /layout (Header, Footer, Sidebar, Navbar)  
+│   │── /features  
+│   │   ├── auth/ (Login, Register, Forgot Password)  
+│   │   ├── cart/ (Cart, Checkout, Order Summary)  
+│   │   ├── product/ (Product List, Product Detail, Filters)  
+│   │   ├── user/ (Profile, Address, Wishlist, Orders)  
+│   │── /pages  
+│   │   ├── Home.jsx  
+│   │   ├── Shop.jsx  
+│   │   ├── ProductDetails.jsx  
+│   │   ├── Cart.jsx  
+│   │   ├── Checkout.jsx  
+│   │   ├── Login.jsx  
+│   │   ├── Register.jsx  
+│   │── /hooks (Custom React Hooks)  
+│   │── /context (React Context API/Zustand for state management)  
+│   │── /services (API calls and third-party integrations)  
+│   │── /utils (Helper functions, constants, validation, formatters)  
+│   │── /routes (React Router configurations)  
+│   │── /store (Redux/Zustand store, slices, actions)  
+│   │── App.js  
+│   │── main.js (entry point)  
+│── /tests (Jest/React Testing Library)  
+│── .env  
+│── package.json  
+│── README.md  
+ 

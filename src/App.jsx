@@ -1,40 +1,15 @@
-import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-
-// Import the scenes
-import Home from './scenes/home/Home';
-import ItemDetails from './scenes/itemDetails/ItemDetails';
-import Navbar from './scenes/global/Navbar';
-import Footer from './scenes/global/Footer';
-import CartMenu from './scenes/global/CartMenu';
-import Checkout from './scenes/checkout/Checkout';
-import Confirmation from './scenes/checkout/Confirmation';
-
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-};
+import CartMenu from "./components/layout/cart_menu";
+import Footer from "./components/layout/footer";
+import Navbar from "./components/layout/header";
+import AppRoutes from "./routes";
 
 function App() {
   return (
-    <div className='app'>
-      <BrowserRouter basename={import.meta.env.BASE_URL ?? '/'}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='item/:itemId' element={<ItemDetails />} />
-          <Route path='checkout' element={<Checkout />} />
-          <Route path='checkout/success' element={<Confirmation />} />
-        </Routes>
-        <CartMenu />
-        <Footer />
-      </BrowserRouter>
+    <div className="app">
+      <Navbar />
+      <AppRoutes />
+      <CartMenu />
+      <Footer />
     </div>
   );
 }
